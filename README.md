@@ -98,7 +98,7 @@ host br-rtr
 host -t PTR 192.168.100.2
 
 
-
+-
 rm -f /etc/net/ifaces/enp7s1/resolv.conf
 
 echo $'search au-team.irpo\nnameserver 192.168.100.2' > /etc/net/ifaces/vlan100/resolv.conf
