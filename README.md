@@ -14,6 +14,7 @@ options {
     recursion yes;
     allow-recursion { any; };
     allow-query { any; };
+	
     dnssec-validation no;
     directory "/etc/bind/zone";
     dump-file "/var/run/named/named_dump.db";
