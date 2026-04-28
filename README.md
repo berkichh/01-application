@@ -1,5 +1,3 @@
-===HQ-SRV===
-
 apt-get update && apt-get install bind bind-utils -y
 
 echo $'search au-team.irpo\nnameserver 127.0.0.1' > /etc/net/ifaces/enp7s1/resolv.conf
