@@ -9,29 +9,34 @@ rndc-confgen -a -c /etc/bind/rndc.key
 nano /etc/bind/options.conf
 
 options {
+
     listen-on { 127.0.0.1; 192.168.100.2; };
     forwarders { 77.88.8.7; 77.88.8.3; };
     recursion yes;
     allow-recursion { any; };
     allow-query { any; };
-	
     dnssec-validation no;
     directory "/etc/bind/zone";
     dump-file "/var/run/named/named_dump.db";
     statistics-file "/var/run/named/named.stats";
     pid-file "/var/run/named/named.pid";
+	
 };
 
 logging {
+
     category default { default_syslog; };
 };
 
+
 zone "au-team.irpo" {
+
     type master;
     file "au-team.irpo";
 };
 
 zone "168.192.in-addr.arpa" {
+
     type master;
     file "168.192.in-addr.arpa";
 };
