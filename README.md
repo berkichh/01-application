@@ -48,14 +48,18 @@ zone "168.192.in-addr.arpa" {
 ==========================================
 nano /etc/bind/zone/au-team.irpo
 
+
+
 $TTL 1D
 @ IN SOA au-team.irpo. root.au-team.irpo. (
+
 	2025020600
     12H
     1H
     1W
     1H
 )
+
 @       IN NS    hq-srv.au-team.irpo.
 
 hq-rtr  IN A     192.168.100.1
@@ -76,6 +80,7 @@ nano /etc/bind/zone/168.192.in-addr.arpa
 
 $TTL 1D
 @ IN SOA au-team.irpo. root.au-team.irpo. (
+
     2025020600
     12H
     1H
