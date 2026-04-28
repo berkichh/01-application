@@ -1,4 +1,5 @@
-﻿# berkich
+===HQ-SRV===
+
 apt-get update && apt-get install bind bind-utils -y
 
 echo $'search au-team.irpo\nnameserver 127.0.0.1' > /etc/net/ifaces/enp7s1/resolv.conf
@@ -9,7 +10,6 @@ rndc-confgen -a -c /etc/bind/rndc.key
 nano /etc/bind/options.conf
 
 options {
-
     listen-on { 127.0.0.1; 192.168.100.2; };
     forwarders { 77.88.8.7; 77.88.8.3; };
     recursion yes;
@@ -20,23 +20,18 @@ options {
     dump-file "/var/run/named/named_dump.db";
     statistics-file "/var/run/named/named.stats";
     pid-file "/var/run/named/named.pid";
-	
 };
 
 logging {
-
     category default { default_syslog; };
 };
 
-
 zone "au-team.irpo" {
-
     type master;
     file "au-team.irpo";
 };
 
 zone "168.192.in-addr.arpa" {
-
     type master;
     file "168.192.in-addr.arpa";
 };
@@ -48,18 +43,14 @@ zone "168.192.in-addr.arpa" {
 ==========================================
 nano /etc/bind/zone/au-team.irpo
 
-
-
 $TTL 1D
 @ IN SOA au-team.irpo. root.au-team.irpo. (
-
 	2025020600
     12H
     1H
     1W
     1H
 )
-
 @       IN NS    hq-srv.au-team.irpo.
 
 hq-rtr  IN A     192.168.100.1
@@ -80,7 +71,6 @@ nano /etc/bind/zone/168.192.in-addr.arpa
 
 $TTL 1D
 @ IN SOA au-team.irpo. root.au-team.irpo. (
-
     2025020600
     12H
     1H
